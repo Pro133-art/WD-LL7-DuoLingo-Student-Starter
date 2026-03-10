@@ -23,7 +23,7 @@
 // ==============================
 
 let xpTotal = 0;
-const xpRewards = [10, 15, 20];
+const xpRewards = [5, 10, 15];
 
 // ==============================
 // STEP 2: DOM Elements
@@ -45,7 +45,22 @@ const earnedXP = xpRewards[Math.floor(Math.random() * xpRewards.length)];
   xpTotal += earnedXP;
   xpDisplay.textContent = xpTotal;
 
+  console.log(`Total XP: ${xpTotal}`);
   // STEP 5: CONDITIONAL LOGIC (YOU WRITE THIS)
+  if (xpTotal< 50){
+    feedback.textContent = "Great keep! Keep going!";
+  }
+  else if (xpTotal == 50){
+    feedback.textContent = "You're doing amazing, you're halfway to the next level!";
+  }
+  else if (xpTotal > 50 && xpTotal < 100){
+    feedback.textContent = "Wow, you're unstoppable!";
+  }
+  else if (xpTotal >= 100){
+    feedback.textContent = "Congratulations! You've reached the next level!";
+  }
+
+
   // Requirements:
   // - At least 3 user states
   // - Use comparisons
